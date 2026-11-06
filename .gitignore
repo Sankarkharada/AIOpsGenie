@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.Python
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# IDE and editor
+.vscode/
+.idea/
+
+# Local databases and backups
+*.db
+*.sqlite
+*.sqlite3
+*.backup
+*.bak
+*.db-journal
+
+# Logs and generated reports
+logs/*
+reports/*
+
+# Temporary inspection and repair scripts
+inspect_incident_schema.py
+inspect_resolved_incidents.py
+repair_resolved_incidents.py
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Generated FAISS vectorstore
+data/vectorstore/

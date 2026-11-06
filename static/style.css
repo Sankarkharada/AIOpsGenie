@@ -1,0 +1,231 @@
+/* =====================================
+   ENTERPRISE INCIDENT MANAGEMENT
+===================================== */
+
+#incidents {
+    scroll-margin-top: 25px;
+}
+
+.incident-table-card {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.incident-stat-card {
+    border-top: 3px solid #38bdf8;
+}
+
+.incident-stat-value {
+    font-size: 28px;
+    color: #38bdf8;
+}
+
+.incident-details {
+    margin-top: 25px;
+    min-height: 150px;
+}
+
+.incident-details > h3 {
+    color: #38bdf8;
+}
+
+.incident-information {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.detail-item {
+    padding: 15px;
+    background: #101827;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+
+.detail-item strong {
+    color: #38bdf8;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.detail-item p {
+    margin-top: 8px;
+    color: #e5e7eb;
+    font-size: 14px;
+}
+
+.priority-badge,
+.incident-status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.priority-badge.critical {
+    background: #451a1a;
+    color: #f87171;
+}
+
+.priority-badge.high {
+    background: #422f12;
+    color: #fbbf24;
+}
+
+.priority-badge.medium {
+    background: #1e3a5f;
+    color: #60a5fa;
+}
+
+.priority-badge.low {
+    background: #123329;
+    color: #4ade80;
+}
+
+.incident-status.open {
+    background: #422f12;
+    color: #fbbf24;
+}
+
+.incident-status.acknowledged {
+    background: #1e3a5f;
+    color: #60a5fa;
+}
+
+.incident-status.in_progress {
+    background: #312e81;
+    color: #a5b4fc;
+}
+
+.incident-status.resolved {
+    background: #123329;
+    color: #4ade80;
+}
+
+.small-button {
+    padding: 7px 13px;
+    font-size: 12px;
+}
+
+.linked-alert-card {
+    margin-top: 20px;
+    padding: 18px;
+    background: #422f12;
+    border-left: 4px solid #fbbf24;
+    border-radius: 8px;
+}
+
+.linked-alert-card h4 {
+    margin-bottom: 10px;
+    color: #fbbf24;
+}
+
+.investigation-section {
+    margin-top: 25px;
+}
+
+.investigation-section h3 {
+    margin-bottom: 15px;
+}
+
+.note-card {
+    background: #101827;
+    border: 1px solid #334155;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+.note-card strong {
+    color: #38bdf8;
+    font-size: 12px;
+}
+
+.note-card p {
+    margin-top: 10px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.incident-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+}
+
+.incident-actions h3 {
+    margin-bottom: 15px;
+}
+
+.incident-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 15px 0;
+    padding: 15px;
+    background: #101827;
+    border-radius: 8px;
+}
+
+.incident-form input,
+.incident-form textarea {
+    width: 100%;
+    padding: 13px;
+    background: #1c293d;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.incident-form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.action-button {
+    background: #0369a1;
+}
+
+.resolve-button {
+    background: #15803d;
+}
+
+.resolve-button:hover {
+    background: #166534;
+}
+
+#refreshIncidents {
+    white-space: nowrap;
+}
+
+#incidentTable {
+    overflow-x: auto;
+}
+
+#incidentTable table {
+    min-width: 850px;
+}
+
+#incidentTable tr:hover {
+    background: #26364f;
+}
+
+#incidentTable button {
+    white-space: nowrap;
+}
+
+@media (max-width: 750px) {
+
+    .incident-information {
+        grid-template-columns: 1fr;
+    }
+
+    #refreshIncidents {
+        width: 100%;
+    }
+
+}

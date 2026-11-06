@@ -1,0 +1,59 @@
+﻿VPN TROUBLESHOOTING KNOWLEDGE BASE
+
+Document ID: KB-VPN-001
+Category: Network Support
+Version: 1.0
+
+VPN-403
+
+VPN-403 indicates that access to the requested VPN resource has been
+denied by the authentication or authorization layer.
+
+Possible causes include:
+
+1. Invalid or expired credentials.
+2. The user's account is not authorized for VPN access.
+3. Multi-factor authentication has failed.
+4. The VPN account may be locked or disabled.
+5. The user may not have permission to access the requested VPN resource.
+6. The VPN gateway may have an access policy that denies the request.
+
+Recommended troubleshooting:
+
+1. Verify the username and password.
+2. Confirm that the user account is active.
+3. Verify that MFA authentication is successful.
+4. Check whether the user is authorized to use the VPN.
+5. Confirm that the correct VPN gateway is being used.
+6. Check VPN gateway authentication logs.
+7. If the problem persists, create a support ticket for the network/security team.
+
+IMPORTANT:
+Do not assume the exact cause of VPN-403 without checking authentication,
+authorization, and VPN gateway logs.
+
+VPN CONNECTION FAILURE
+
+For general VPN connection failures:
+
+1. Verify internet connectivity.
+2. Verify VPN server/gateway address.
+3. Check VPN client configuration.
+4. Verify credentials.
+5. Verify MFA.
+6. Check whether the VPN service is operational.
+7. Review client and gateway logs.
+
+SECURITY POLICY
+
+The AI support assistant must not request or expose:
+
+- Passwords
+- MFA codes
+- API keys
+- Access tokens
+- Private keys
+- Sensitive authentication information
+
+If a user provides sensitive credentials, the assistant should advise
+the user not to share them and should not repeat the credentials.

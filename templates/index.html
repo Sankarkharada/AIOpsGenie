@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AIOpsGenie | AI Operations Center</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>🤖 AIOpsGenie</h2>
+    <p class="subtitle">AI Operations Center</p>
+
+    <nav>
+        <a href="#overview">Overview</a>
+        <a href="#system">System Health</a>
+        <a href="#alerts">System Alerts</a>
+        <a href="#incidents">Incident Management</a>
+        <a href="#chat">AI Assistant</a>
+        <a href="#services">Service Monitoring</a>
+        <a href="#tickets">Ticket History</a>
+    </nav>
+
+    <div class="sidebar-footer">
+        Agentic AI Support Platform
+    </div>
+
+</div>
+
+
+<main>
+
+    <header>
+        <div>
+            <h1>Operations Dashboard</h1>
+            <p>Monitor infrastructure and interact with your AI assistant.</p>
+        </div>
+
+        <span class="status-badge">● SYSTEM ONLINE</span>
+    </header>
+
+
+    <!-- TICKET STATISTICS -->
+
+    <section id="stats">
+
+        <h2>Ticket Statistics</h2>
+
+        <div id="statsCards" class="cards">
+            Loading statistics...
+        </div>
+
+    </section>
+
+
+    <!-- SYSTEM HEALTH -->
+
+    <section id="system">
+
+        <div class="section-heading">
+            <div>
+                <h2>System Health Monitoring</h2>
+                <p class="section-description">
+                    Live resource monitoring of this machine.
+                </p>
+            </div>
+
+            <span id="systemHealth" class="health-badge">
+                Loading...
+            </span>
+        </div>
+
+        <div id="systemCards" class="cards">
+            <div class="card">Loading system metrics...</div>
+        </div>
+
+        <p id="systemUpdated" class="last-updated">
+            Waiting for system metrics...
+        </p>
+
+        <div class="chart-grid">
+
+            <div class="card chart-card">
+                <h3>CPU Usage History</h3>
+                <canvas id="cpuChart"></canvas>
+            </div>
+
+            <div class="card chart-card">
+                <h3>RAM Usage History</h3>
+                <canvas id="memoryChart"></canvas>
+            </div>
+
+            <div class="card chart-card">
+                <h3>Disk Usage History</h3>
+                <canvas id="diskChart"></canvas>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SYSTEM ALERTS -->
+
+    <section id="alerts">
+
+        <div class="section-heading">
+            <div>
+                <h2>System Alerts</h2>
+                <p class="section-description">
+                    CPU, RAM and disk threshold alerts.
+                </p>
+            </div>
+
+            <span id="activeAlertBadge" class="health-badge">
+                Loading...
+            </span>
+        </div>
+
+        <div class="card">
+            <h3>Active Alerts</h3>
+            <div id="activeAlerts">Loading active alerts...</div>
+        </div>
+
+        <div class="card alert-history-card">
+            <h3>Alert History</h3>
+            <div id="alertHistory">Loading alert history...</div>
+        </div>
+
+    </section>
+
+
+    <!-- INCIDENT MANAGEMENT -->
+
+    <section id="incidents">
+
+        <div class="section-heading">
+            <div>
+                <h2>Incident Management Center</h2>
+
+                <p class="section-description">
+                    Investigate, assign, acknowledge and resolve incidents.
+                </p>
+            </div>
+
+            <button id="refreshIncidents" type="button">
+                Refresh Incidents
+            </button>
+        </div>
+
+
+        <!-- INCIDENT STATISTICS -->
+
+        <div id="incidentStats" class="cards">
+
+            <div class="card">
+                Loading incident statistics...
+            </div>
+
+        </div>
+
+
+        <!-- INCIDENT TABLE -->
+
+        <div class="card incident-table-card">
+
+            <h3>Incident Queue</h3>
+
+            <div id="incidentTable">
+                Loading incidents...
+            </div>
+
+        </div>
+
+
+        <!-- INCIDENT DETAILS -->
+
+        <div id="incidentDetails" class="card incident-details">
+
+            <h3>Incident Investigation</h3>
+
+            <p class="section-description">
+                Select an incident from the queue to view its details
+                and perform incident-management actions.
+            </p>
+
+            <div id="incidentDetailContent">
+                No incident selected.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICE OVERVIEW -->
+
+    <section id="overview">
+
+        <h2>Service Overview</h2>
+
+        <div id="serviceCards" class="cards">
+            Loading services...
+        </div>
+
+    </section>
+
+
+    <!-- AI ASSISTANT -->
+
+    <section id="chat">
+
+        <h2>AIOpsGenie AI Assistant</h2>
+
+        <div class="chat-container">
+
+            <div id="chatMessages" class="chat-messages">
+
+                <div class="message bot">
+                    Hello! I'm AIOpsGenie. How can I help you today?
+                </div>
+
+            </div>
+
+            <form id="chatForm">
+
+                <input
+                    type="text"
+                    id="userMessage"
+                    placeholder="Ask about VPN, tickets or troubleshooting..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit">Send</button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICE MONITORING -->
+
+    <section id="services">
+
+        <h2>Service Monitoring</h2>
+
+        <div id="serviceTable"></div>
+
+        <p class="notice">
+            VPN, email, database, firewall and web service statuses
+            currently use simulated monitoring data.
+        </p>
+
+    </section>
+
+
+    <!-- TICKET HISTORY -->
+
+    <section id="tickets">
+
+        <h2>Support Ticket History</h2>
+
+        <div id="ticketTable">
+            Loading tickets...
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
